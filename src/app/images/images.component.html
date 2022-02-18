@@ -1,0 +1,21 @@
+<h2>Works</h2>
+
+<div>
+    <input type="text" id="new-name" #workName [(ngModel)]="work.name">
+    <input type="text" id="new-descText" #newDescText [(ngModel)]="work.desc.descText">
+    <input type="text" id="new-year" #newYear [(ngModel)]="work.desc.creationYear">
+    <input type="text" id="new-value" #newValue [(ngModel)]="work.value">
+    <input type="text" id="new-avai" #newAvai [(ngModel)]="work.available">
+    <input type="text" id="work-maker" #workMaker [(ngModel)]="work.maker">
+    <input type="text" id="img-data" #workImgData [(ngModel)]="work.img.data">
+    <button>Add work</button>
+</div>
+
+<ul>
+    <li *ngFor="let work of works">
+        <a>
+            Work name: {{work.name}}
+            <img src="this.domSanitizer.bypassSecurityTrustUrl(data:image/{{work.img.contentType}};base64,{{work.img.data.toString()}})">
+        </a>
+    </li>
+</ul>
